@@ -24,8 +24,8 @@ class Enemy extends Entity
     public override function moveCollideX(e:Entity)
     {
 	var count = 0;
-        scene.remove(e);
-        scene.remove(this);
+	HXP.world.recycle(e);
+	HXP.world.recycle(this);
 	mytimer = new haxe.Timer(100);
 	resources.Score.death = true;
 	mytimer.run = function():Void
@@ -53,7 +53,7 @@ class Enemy extends Entity
         super.update();
 	if (x == -30)
 	{
-		scene.remove(this);
+		HXP.world.recycle(this);
 	}
     }
     var mytimer:haxe.Timer;

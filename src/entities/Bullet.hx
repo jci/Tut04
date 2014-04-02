@@ -27,8 +27,8 @@ class Bullet extends Entity
  
     public override function moveCollideX(e:Entity)
     {
-        scene.remove(e);
-        scene.remove(this);
+	HXP.world.recycle(e);
+	HXP.world.recycle(this);
 	if (e.toString()=="entities.Enemy")
 	{
 //		HXP.console.log(["hooray vato"]);
@@ -43,11 +43,12 @@ class Bullet extends Entity
 	if (x > HXP.width)
 	{
 		// 
-		//HXP.console.log(["Bullet : Out of screeeeeen"]);
-		scene.remove(this);
+		HXP.console.log(["out of screen"]);
+		HXP.world.recycle(this);
 	} 
         super.update();
     }
+
     
     private var _gameScene:GameScene;
 }

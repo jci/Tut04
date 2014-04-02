@@ -121,7 +121,7 @@ class Ship extends Entity
 		return;
 	}
 
-	HXP.console.log([y]);
+//	HXP.console.log([y]);
     }
  
     public override function update()
