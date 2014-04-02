@@ -14,17 +14,11 @@ class Ship extends Entity
     {
         super(x, y);
  
-        //graphic = Image.createRect(32, 32, 0xDDEEFF);
 	graphic = new Image("graphics/PlayerShipImage.png");
         setHitbox(32, 32);
- 
         Input.define("up", [Key.UP, Key.W]);
         Input.define("down", [Key.DOWN, Key.S]);
         Input.define("shoot", [Key.RIGHT, Key.X]);
-
-
-	//
- 
         velocity = 0;
         type = "player";
     }
@@ -33,9 +27,6 @@ class Ship extends Entity
     {
         acceleration = 0;
 	
-	// keyboard events
-
- 
         if (Input.check("up"))
         {
             acceleration = -1;
@@ -53,18 +44,11 @@ class Ship extends Entity
 
 	if (Input.mouseDown)
 	{
-		//HXP.console.log([Input.mouseX , " " , Input.mouseY]);
-		//trace("mouseX" + Input.mouseX);
-		//trace("mouseY" + Input.mouseY);
-
-		// let's see where it is
-
 		var _mouseX = Input.mouseX;
 		var _mouseY = Input.mouseY;
-
 		var _middle = HXP.screen.height/2;
 		var _ending = HXP.screen.width*0.75;
-
+		
 		if ((_mouseY >0) && (_mouseY<_middle) && (_mouseX>0) && (_mouseX<200))
 		{
 			acceleration = -1;
@@ -75,7 +59,6 @@ class Ship extends Entity
 			acceleration = 1;
 		}
 
-//		return;
 	}
 
 	if (Input.mousePressed)
@@ -121,7 +104,6 @@ class Ship extends Entity
 		return;
 	}
 
-//	HXP.console.log([y]);
     }
  
     public override function update()

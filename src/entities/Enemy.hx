@@ -12,11 +12,9 @@ class Enemy extends Entity
     {
         super(x, y);
 
-        //graphic = Image.createRect(32, 32);
 	image = new Image("graphics/ramio_jump.png");
 	image.scale = 2;
 	graphic = image;
-	//graphic.scale = 32;
         setHitbox(32, 32);
         type = "enemy";
     }

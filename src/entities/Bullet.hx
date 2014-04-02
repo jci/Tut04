@@ -31,7 +31,6 @@ class Bullet extends Entity
 	HXP.world.recycle(this);
 	if (e.toString()=="entities.Enemy")
 	{
-//		HXP.console.log(["hooray vato"]);
 		resources.Score.addKill();
 	} 
         return true;
@@ -42,8 +41,6 @@ class Bullet extends Entity
         moveBy(20, 0, "enemy");
 	if (x > HXP.width)
 	{
-		// 
-		HXP.console.log(["out of screen"]);
 		HXP.world.recycle(this);
 	} 
         super.update();
