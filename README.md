@@ -13,7 +13,9 @@ $ lime build <platform>
 i.e. 
 
 $ lime build linux
+
 $ lime build windows
+
 $ lime build android
 
 For Android build, a functional SDK/NDK must be working before.
