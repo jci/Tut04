@@ -20,6 +20,6 @@ $ lime build android
 
 For Android build, a functional SDK/NDK must be working before.
 
-Any comments, direct them to <jci at codemonkey.cl>
+Any comments or questions, direct them to "jci at codemonkey.cl"
 
 No license involved on this code. There's a sprite (Mario, from Nintendo) that will be removed soon enough.
