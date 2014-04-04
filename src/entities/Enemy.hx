@@ -15,7 +15,7 @@ class Enemy extends Entity
     {
         super(x, y);
 
- 		image = new Image("graphics/ramio_jump.png");
+ 		image = new Image("graphics/smile.png");
 		image.scale = 2;
 		graphic = image;
         setHitbox(32, 32);
