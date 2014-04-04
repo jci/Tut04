@@ -14,8 +14,9 @@ class Ship extends Entity
     {
         super(x, y);
  
-	graphic = new Image("graphics/PlayerShipImage.png");
+		graphic = new Image("graphics/PlayerShipImage.png");
         setHitbox(32, 32);
+ 
         Input.define("up", [Key.UP, Key.W]);
         Input.define("down", [Key.DOWN, Key.S]);
         Input.define("shoot", [Key.RIGHT, Key.X]);
@@ -28,50 +29,51 @@ class Ship extends Entity
         acceleration = 0;
 	
         if (Input.check("up"))
-        {
-            acceleration = -1;
-        }
+			{
+				acceleration = -1;
+			}
  
         if (Input.check("down"))
-        {
-            acceleration = 1;
-        }
+			{
+				acceleration = 1;
+			}
 	
-	if (Input.pressed("shoot"))
-	{
-    	    scene.add(new Bullet(x + width, y + height / 2));
-	}
+		if (Input.pressed("shoot"))
+			{
+				scene.add(new Bullet(x + width, y + height / 2));
+			}
 
-	if (Input.mouseDown)
-	{
-		var _mouseX = Input.mouseX;
-		var _mouseY = Input.mouseY;
-		var _middle = HXP.screen.height/2;
-		var _ending = HXP.screen.width*0.75;
-		
-		if ((_mouseY >0) && (_mouseY<_middle) && (_mouseX>0) && (_mouseX<200))
-		{
-			acceleration = -1;
-		}
+		if (Input.mouseDown)
+			{
 
-		if ((_mouseY > _middle) && (_mouseX>0) && (_mouseX<200))
-		{
-			acceleration = 1;
-		}
+				var _mouseX = Input.mouseX;
+				var _mouseY = Input.mouseY;
+				var _middle = HXP.screen.height/2;
+				var _ending = HXP.screen.width*0.75;
 
-	}
+				if ((_mouseY >0) && (_mouseY<_middle) && (_mouseX>0) && (_mouseX<200))
+					{
+						acceleration = -1;
+					}
 
-	if (Input.mousePressed)
-	{
-		var _mouseX = Input.mouseX;
-		var _ending = HXP.screen.width*0.75;
+				if ((_mouseY > _middle) && (_mouseX>0) && (_mouseX<200))
+					{
+						acceleration = 1;
+					}
 
-		if ((_mouseX>_ending))
-		{
-			scene.add(new Bullet(x+width,y+height/2));
-		}
+			}
 
-	}
+		if (Input.mousePressed)
+			{
+				var _mouseX = Input.mouseX;
+				var _ending = HXP.screen.width*0.75;
+
+				if ((_mouseX>_ending))
+					{
+						scene.add(new Bullet(x+width,y+height/2));
+					}
+
+			}
 	
     }
  
@@ -92,17 +94,18 @@ class Ship extends Entity
             velocity = Math.max(velocity - drag, 0);
         }
 
-	if (y<5)
-	{
-		y=0;
-		return;
-	}
+		if (y<5)
+			{
+				y=0;
+				return;
+			}
 
-	if (y+64>HXP.screen.height)
-	{
-		y=HXP.screen.height-64;  
-		return;
-	}
+		if (y+64>HXP.screen.height)
+			{
+				y=HXP.screen.height-64;  
+				return;
+			}
+
 
     }
  
